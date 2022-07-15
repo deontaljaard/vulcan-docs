@@ -1,0 +1,50 @@
+# Copyright 2022 Adevinta
+
+site_name: Vulcan
+copyright: Copyright &copy; 2022 Adevinta
+nav:
+  - Home: index.md
+  - Use Cases:
+    - Continuous Scanning: continuous-scanning.md
+    - Asset Auto-Discovery: asset-auto-discovery.md
+    - Security Checks in CI/CD: security-checks-in-ci-cd.md
+    - Security Metrics: security-metrics.md
+  - Basic Documentation:
+    - Vulcan API: vulcan-api.md
+    - Supported Assets: supported-assets.md
+    - Vulnerability Management: vulnerability-management.md
+    - Vulnerability Severity: vulnerability-severity.md
+    - Developing Checks: developing-checks.md
+  - Technical Details:
+    - Architecture: architecture.md
+    - Repositories: repositories.md
+    - Changelog: changelog.md
+theme:
+  name: material
+  logo: img/logo.svg
+  favicon: img/logo.png
+  features:
+    - navigation.sections
+    - navigation.tracking
+    - content.code.annotate
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/adevinta/vulcan-docs
+markdown_extensions:
+    - attr_list
+    - md_in_html
+    - toc:
+        permalink: true
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+    - render_swagger
+    - search
