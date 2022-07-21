@@ -11,7 +11,7 @@ from diagrams.aws.integration import SNS, SQS
 from diagrams.onprem.container import Docker
 from diagrams.onprem.inmemory import Redis
 
-with Diagram("Detailed Vulcan Architecture", outformat="png", filename="docs/img/detailed-architecture", show=False):
+with Diagram("", outformat="png", filename="docs/img/detailed-architecture", show=False):
         with Cluster("Clients"):
                 user = User("user")
                 vulcan_ui = Pod("vulcan-ui")

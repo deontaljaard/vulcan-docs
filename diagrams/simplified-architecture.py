@@ -7,7 +7,7 @@ from diagrams.aws.database import RDS
 from diagrams.aws.integration import SQS, SNS
 from diagrams.onprem.container import Docker
 
-with Diagram("Simplified Vulcan Architecture", outformat="png", filename="docs/img/simplified-architecture", show=False):
+with Diagram("", outformat="png", filename="docs/img/simplified-architecture", show=False):
         result_queue = SQS("result-queue")
 
         with Cluster("Agents"):

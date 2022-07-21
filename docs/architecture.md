@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Architecture
 
 ## Simplified Architecture
@@ -19,14 +24,15 @@ Notably absent from this diagram are the following elements:
 - User interfaces such as the [Vulcan UI](https://github.com/adevinta/vulcan-ui), the [Vulcan Core CLI](https://github.com/adevinta/vulcan-core-cli), [Vulcan Local](https://github.com/adevinta/vulcan-local/)...
 - Communication performed by specific checks requiring third-party services.
 - Network devices (balancers, proxies, gateways...) necessary for communication.
+- Communication interfaces such as message queues, notification topics and [stream](https://github.com/adevinta/vulcan-stream).
 - Simple microservices ([result storage](https://github.com/adevinta/vulcan-results), [check inventory](https://github.com/adevinta/vulcan-persistence), [metrics](https://github.com/adevinta/vulcan-metrics)...) used for specific tasks.
-- [WebSocket stream](https://github.com/adevinta/vulcan-stream) for pushing commands (abort, scale...) from scan engine to the agents.
 - Specific runtimes (e.g. AWS, Kubernetes, GCP...) that the components can run inside of.
-
-For a detailed list of all the components involved in Vulcan, see the [repositories](/repositories/) page.
 
 ## Detailed Architecture
 
-This diagram shows a detailed architecture of Vulcan working in Kubernetes and AWS.
+This diagram shows a more detailed architecture of Vulcan working in Kubernetes and AWS.
+
+For a complete list of all the components involved in Vulcan, see the [repositories](/repositories/) page.
 
 [![Vulcan Detailed Architecture](img/detailed-architecture.png)](img/detailed-architecture.png)
+
