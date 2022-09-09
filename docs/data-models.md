@@ -10,28 +10,29 @@ hide:
 ```mermaid
 erDiagram
     issues {
-        text id "PK"
-        text summary
-        int cwe_id
-        text description
-        text_array recomendations
-        text_array reference_links 
+      text id "PK"
+      text summary
+      int cwe_id
+      text description
+      text_array recomendations
+      text_array reference_links
     }
     issue_labels {
-        text issue_id "PK, FK"
-        text label "PK, FK"
+      text issue_id "PK, FK"
+      text label "PK, FK"
     }
     findings {
-        text id "PK"
-        text issue_id "FK"
-        text target_id "FK"
-        text status
-        text details
-        jsonb resources
-        float score
-        text impact_details
-        text affected_resource
-        text fingerprint
+      text id "PK"
+      text issue_id "FK"
+      text target_id "FK"
+      text affected_resource
+      text status
+      text details
+      jsonb resources
+      float score
+      text impact_details
+      text fingerprint
+      text affected_resource_string
     }
     finding_events {
       text id "PK"
@@ -42,6 +43,7 @@ erDiagram
       text details
       jsonb resources
       text fingerprint
+      text affected_resource_string
     }
     finding_exposures {
       text finding_id "PK, FK"
@@ -71,15 +73,10 @@ erDiagram
       text id "PK"
       text identifier
     }
-    target_tags {
-      text target_id "PK, FK"
-      text tag "PK"
-    }
     target_teams {
       text target_id "PK, FK"
       text team_id "PK"
     }
-    targets ||--o{ target_tags : ""
     targets ||--o{ target_teams : ""
     targets ||--o{ findings : ""
     targets ||--o{ sources : ""
@@ -129,10 +126,10 @@ erDiagram
       uuid id "PK"
       uuid user_id "FK"
       uuid finding_id
+      uuid team_id
       text status
       text status_previous
       text notes
-      text tag
       time created_at
     }
     recipients {
