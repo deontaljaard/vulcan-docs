@@ -1,0 +1,56 @@
+direction: right
+title: System Context Diagram {
+  near: top-center
+  shape: text
+  style: {
+    font-size: 29
+    bold: true
+    underline: true
+  }
+}
+footer: "" {
+    near: bottom-center
+    shape: text
+    label: |md
+     _* external system_
+    |
+}
+
+autodiscovery: {
+    label: autodiscovery*
+    style.opacity: 0.4
+}
+
+security-metrics: {
+    label: security metrics*
+    style.opacity: 0.4
+}
+
+user: {
+  shape: person
+  label: user
+}
+
+vulcan: "" {
+  text: |md
+    # VULCAN
+    **[Software System]**
+     * Tenancy
+     * Finding lifecycle
+     * Live Report
+     * Findings Notifications
+     * Findings Digest
+     * Scan assets using vulcan checks
+     * Stores scan results
+  |
+}
+
+user <- vulcan: Findings live report
+user <- vulcan: Periodic digest
+user <- vulcan: Send Critical Findings
+user -> vulcan: Adds assets
+user -> vulcan: run scan
+user <- vulcan: get scan results
+
+autodiscovery->vulcan
+security-metrics<-vulcan

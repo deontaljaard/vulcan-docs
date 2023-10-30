@@ -2,21 +2,17 @@
 
 This repository contains Vulcan documentation in markdown format.
 
-The documentation site is generated using [MkDocs](https://www.mkdocs.org/) and [diagrams](https://diagrams.mingrammer.com/).
+The documentation site is generated using [MkDocs](https://www.mkdocs.org/) and [d2](https://d2lang.com/).
 
 ## Requirements
 
 - Python3
-- [Graphviz](https://graphviz.gitlab.io/download/)
+- [d2](https://d2lang.com/)
 
 ## Generating Diagrams
 
 ```bash
-pip3 install -r requirements.txt
-python3 diagrams/simplified-architecture.py
-# The image will be created in "docs/img/simplified-architecture.png".
-python3 diagrams/detailed-architecture.py
-# The image will be created in "docs/img/detailed-architecture.png".
+d2 --sketch diagrams/system-context.d2 - > docs/img/system-context.svg
 ```
 
 ## Viewing Documentation
